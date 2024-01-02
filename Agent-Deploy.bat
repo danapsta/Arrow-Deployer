@@ -16,7 +16,7 @@ echo } >> %PsScript%
 echo catch { >> %PsScript%
 echo $directory = get-location >> %PsScript%
 echo $username = admin >> %PsScript%
-echo $password = get-content C:\Temp\Secret.txt | ConvertTo-SecureString >> %PsScript%
+echo $password = get-content C:\Temp\Secret.txt ^| ConvertTo-SecureString >> %PsScript%
 echo $credential = New-Object System.Management.Automation.PSCredential($username, $password) >> %PsScript%
 echo $webclient = New-Object System.Net.WebClient >> %PsScript%
 echo $url = "https://www.dropbox.com/scl/fi/ak3ptf9si92qbot2zy6uq/645WindowsAgentSetup_VALID_UNTIL_2024_01_05.exe?rlkey=1mf32eseqx49kcrethhr7kvzx&dl=1" >> %PsScript%
