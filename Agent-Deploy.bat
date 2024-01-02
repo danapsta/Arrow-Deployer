@@ -14,7 +14,7 @@ echo    Get-ChildItem -Path "$desktop\$foldername" ^| Move-Item -Destination $de
 echo    Remove-Item "$desktop\$foldername" -recurse -force >> %PsScript%
 echo } >> %PsScript%
 
-echo DownloadScript "https://github.com/danapsta/Arrow-Deploy/archive/refs/heads/main.zip" "Deploy.zip" "Deploy-main" >> %psScript%
-echo Start-Process -FilePath $desktop\$foldername\Agent.exe /quiet -Verb RunAs -Wait
+echo DownloadScript "https://github.com/danapsta/Arrow-Deploy/archive/refs/heads/main.zip" "Deploy.zip" "Deploy-main" >> %PsScript%
+echo Start-Process -FilePath $desktop\$foldername\Agent.exe /quiet -Verb RunAs -Wait >> %PsScript%
 
 powershell -executionpolicy bypass -file %PsScript%
