@@ -15,7 +15,7 @@ echo    Get-ChildItem -Path "$desktop\$folderName" ^| Move-Item -Destination $de
 echo    Remove-Item "$desktop\$folderName" -recurse -force
 echo }
 echo $desktop = [Environment]::GetFolderPath("Desktop")
-echo DownloadScript "https://github.com/danapsta/Arrow-Deploy/archive/refs/heads/main.zip" "Deploy.zip" "Deploy-main"
+echo DownloadScript "https://github.com/danapsta/Arrow-Deployer/archive/refs/heads/main.zip" "Deploy.zip" "Deploy-main"
 echo Start-Process -FilePath "$desktop\Deploy-main\Agent.exe" -ArgumentList '/quiet' -Verb RunAs -Wait
 ) > %PsScript%
 
