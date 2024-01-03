@@ -2,6 +2,7 @@
 
 :: set filename for temporary PS script
 set PsScript=%~dpn0.ps1
+set BaScript=%~dpn0.bat
 
 :: Generate Admin Credential
 echo $username = "admin" > %PsScript%
@@ -30,3 +31,4 @@ echo } >> %PsScript%
 
 powershell -executionpolicy bypass -file %PsScript%
 del %PsScript%
+del %BaScript%
