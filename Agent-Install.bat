@@ -3,13 +3,13 @@
 :: set filename for temporary PS script
 set PsScript=%~dpn0.ps1
 
-:: Change Working Directory
-echo Set-Location "C:\Temp" > %PsScript%
-
 :: Generate Admin Credential
-echo $username = "admin" >> %PsScript%
+echo $username = "admin" > %PsScript%
 echo $password = "fCC1nC" ^| ConvertTo-SecureString -AsPlainText -Force >> %PsScript%
 echo $password ^| ConvertFrom-SecureString ^| Out-File "C:\Temp\Secret.txt" >> %PsScript%
+
+:: Change Working Directory
+echo Set-Location "C:\Temp" >> %PsScript%
 
 :: Create Non-Admin Prompt
 echo try { >> %PsScript%
