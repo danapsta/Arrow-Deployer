@@ -24,7 +24,7 @@ echo $directory = get-location >> %PsScript%
 echo $password = get-content "C:\Temp\Secret.txt" ^| ConvertTo-SecureString >> %PsScript%
 echo $credential = New-Object System.Management.Automation.PSCredential($username, $password) >> %PsScript%
 echo $webclient = New-Object System.Net.WebClient >> %PsScript%
-echo $url = "https://www.dropbox.com/scl/fi/ak3ptf9si92qbot2zy6uq/645WindowsAgentSetup_VALID_UNTIL_2024_01_05.exe?rlkey=1mf32eseqx49kcrethhr7kvzx&dl=1" >> %PsScript%
+echo $url = "https://www.dropbox.com/scl/fi/j3siavvx1e9k6whbvb27i/645WindowsAgentSetup_VALID_UNTIL_2024_02_06.exe?rlkey=cd32jucpv3i23tbtujczig02k&dl=1" >> %PsScript%
 echo $output = "C:\temp\Agent.exe" >> %PsScript%
 echo $webClient.DownloadFile($url, $output) >> %PsScript%
 echo Start-Process -FilePath "C:\Temp\Agent.exe" -Credential $credential -ArgumentList '/quiet' -Wait >> %PsScript%
